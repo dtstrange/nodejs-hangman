@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dtstrange/nodejs-hangman#readme",
   "dependencies": {
+    "events": "^1.1.1",
     "inquirer": "^4.0.1",
     "is-letter": "^1.1.1"
   }

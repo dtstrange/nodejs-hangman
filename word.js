@@ -1,15 +1,7 @@
 //require letter constructor
 var Letter = require("./letter.js");
 
-//array of words to be used
-var creatures = ["BASILISK", "CENTAUR",
-"CHIMERA", "DRAGON",
-"GORGON", "GRIFFIN",
-"HYDRA", "KRAKEN",
-"MANTICORE", "MINOTAUR",
-"PEGASUS", "PHOENIX",
-"PSYCLOPS", "SAYTR"
-]
+
 
 function Word(wrd){
     var that = this;
@@ -22,13 +14,13 @@ function Word(wrd){
     this.getLetters = function(){
         for(var i=0; i<this.word.length; i++){
             var newLetter = new Letter(that.word[i]);
-            this.letters.push(newLetter);
+            this.letter.push(newLetter);
         }
     };
 
     //found the current word
     this.findTheWord = function(){
-        if(this.letters.every(function(lttr){
+        if(this.letter.every(function(lttr){
             return lttr.appear === true;
         })){
             this.wordFound = true;
@@ -39,7 +31,7 @@ function Word(wrd){
     this.checkIfLetterFound = function(guessedLetter){
         var whatToReturn = 0;
 
-        this.letters.forEach(function(lttr){
+        this.letter.forEach(function(lttr){
             if(lttr.letter === guessedLetter){
                 lttr.appear = true;
                 whatToReturn++;
@@ -51,7 +43,7 @@ function Word(wrd){
     this.wordRender = function(){
         var display = '';
 
-        this.letters.forEach(function(lttr){
+        this.letter.forEach(function(lttr){
             var currentLetter = lttr.letterRender();
             display+= currentLetter;
         });
@@ -62,4 +54,4 @@ function Word(wrd){
 };
 
 module.exports = Word;
-module.exports = creatures;
+
