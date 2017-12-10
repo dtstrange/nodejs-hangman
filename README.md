@@ -2,4 +2,6 @@
 
 Hangman node JS program
 
-run hangman.js as node in terminal
+Run hangman.js as node in terminal
+
+Theme for hangman is Mythical Creatures
